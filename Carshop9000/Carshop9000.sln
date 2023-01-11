@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33209.295
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.Model", "Carshop9000.Model\Carshop9000.Model.csproj", "{7FD7B553-5593-438B-9940-0C7BD19108CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.Data.EfCore", "Carshop9000.Data.EfCore\Carshop9000.Data.EfCore.csproj", "{BDA28213-6A78-42B1-A9C8-481E4E4C73BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.Data.EfCore.Tests", "Carshop9000.Data.EfCore.Tests\Carshop9000.Data.EfCore.Tests.csproj", "{DFB4A325-89A9-419B-872B-E56EE59BA744}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7FD7B553-5593-438B-9940-0C7BD19108CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FD7B553-5593-438B-9940-0C7BD19108CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FD7B553-5593-438B-9940-0C7BD19108CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDA28213-6A78-42B1-A9C8-481E4E4C73BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA28213-6A78-42B1-A9C8-481E4E4C73BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA28213-6A78-42B1-A9C8-481E4E4C73BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA28213-6A78-42B1-A9C8-481E4E4C73BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFB4A325-89A9-419B-872B-E56EE59BA744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFB4A325-89A9-419B-872B-E56EE59BA744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFB4A325-89A9-419B-872B-E56EE59BA744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFB4A325-89A9-419B-872B-E56EE59BA744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
