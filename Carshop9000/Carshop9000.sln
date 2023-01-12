@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carshop9000.Data.EfCore.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.Logic", "Carshop9000.Logic\Carshop9000.Logic.csproj", "{C45C4CDF-2F6F-49EE-8659-375C96024AC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.UI.DevConsole", "Carshop9000.UI.DevConsole\Carshop9000.UI.DevConsole.csproj", "{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C45C4CDF-2F6F-49EE-8659-375C96024AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C45C4CDF-2F6F-49EE-8659-375C96024AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C45C4CDF-2F6F-49EE-8659-375C96024AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

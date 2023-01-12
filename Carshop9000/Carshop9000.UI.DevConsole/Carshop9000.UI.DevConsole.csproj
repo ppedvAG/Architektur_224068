@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Carshop9000.Data.EfCore\Carshop9000.Data.EfCore.csproj" />
+    <ProjectReference Include="..\Carshop9000.Logic\Carshop9000.Logic.csproj" />
+    <ProjectReference Include="..\Carshop9000.Model\Carshop9000.Model.csproj" />
+  </ItemGroup>
+
+</Project>
