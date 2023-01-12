@@ -1,5 +1,4 @@
-﻿using Carshop9000.Model.Contracts;
-using Carshop9000.UI.Wpf.ViewModels;
+﻿using Carshop9000.UI.Wpf.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows.Controls;
 
@@ -12,8 +11,8 @@ namespace Carshop9000.UI.Wpf.Views
     {
         public CarView()
         {
-            this.DataContext = App.Current.Services.GetService<CarViewModel>();
             InitializeComponent();
+            DataContext = App.Current.Services.GetService<CarViewModel>();
         }
     }
 }

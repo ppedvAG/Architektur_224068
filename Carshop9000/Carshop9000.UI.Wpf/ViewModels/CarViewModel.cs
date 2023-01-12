@@ -38,7 +38,6 @@ namespace Carshop9000.UI.Wpf.ViewModels
             }
         }
 
-
         private Car selecteCar;
         private readonly IRepository _repo;
 
