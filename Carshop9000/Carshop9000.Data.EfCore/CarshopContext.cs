@@ -31,6 +31,10 @@ namespace Carshop9000.Data.EfCore
 
             modelBuilder.Entity<Customer>().HasMany(x => x.BillingOrders).WithOne(x => x.BillingCustomer!);
             modelBuilder.Entity<Customer>().HasMany(x => x.DeliveryOrders).WithOne(x => x.DeliveryCustomer!);
+
+            modelBuilder.Entity<Order>().HasMany(x => x.Items)
+                                        .WithOne(x => x.Order!)
+                                        .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
