@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.5.0" />
+    <PackageReference Include="DryIoc" Version="5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Carshop9000.Data.EfCore\Carshop9000.Data.EfCore.csproj" />
     <ProjectReference Include="..\Carshop9000.Logic\Carshop9000.Logic.csproj" />
     <ProjectReference Include="..\Carshop9000.Model\Carshop9000.Model.csproj" />
