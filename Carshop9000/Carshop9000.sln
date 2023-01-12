@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.UI.DevConsole",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.Logic.Tests", "Carshop9000.Logic.Tests\Carshop9000.Logic.Tests.csproj", "{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.UI.Wpf", "Carshop9000.UI.Wpf\Carshop9000.UI.Wpf.csproj", "{D03FE5EE-2F0D-4C78-8155-190C366055C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D03FE5EE-2F0D-4C78-8155-190C366055C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D03FE5EE-2F0D-4C78-8155-190C366055C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D03FE5EE-2F0D-4C78-8155-190C366055C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D03FE5EE-2F0D-4C78-8155-190C366055C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

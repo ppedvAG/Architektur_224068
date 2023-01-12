@@ -1,7 +1,6 @@
 ﻿using Bogus;
 using Carshop9000.Model.Contracts;
 using Carshop9000.Model.DomainModel;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Carshop9000.Logic
 {
