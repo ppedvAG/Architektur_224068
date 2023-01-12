@@ -16,7 +16,7 @@ namespace Carshop9000.Logic
 
         public Car? GetFastestRedCar()
         {
-            return Repository.GetAll<Car>()
+            return Repository.Query<Car>()
                              .Where(x => x.Color == "red")
                              .OrderByDescending(x => x.KW).FirstOrDefault();
         }

@@ -37,9 +37,10 @@ var repo = container.Resolve<IRepository>();
 var carService = container.Resolve<CarService>();
 carService.CreateDemoCars();
 
-foreach (var car in repo.GetAll<Car>())
+foreach (var car in repo.Query<Car>().ToList())
 {
     Console.WriteLine($"{car.Manufacturer?.Name} {car.Model} {car.Color} {car.Manufacturer?.City}");
+    //Console.WriteLine($" {car.Model} {car.Color} ");
 }
 
 Console.WriteLine();

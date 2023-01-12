@@ -24,9 +24,9 @@ namespace Carshop9000.Data.EfCore
             _conContext.Set<T>().Remove(entity);
         }
 
-        public IEnumerable<T> GetAll<T>() where T : Entity
+        public IQueryable<T> Query<T>() where T : Entity
         {
-            return _conContext.Set<T>().ToList();
+            return _conContext.Set<T>();
         }
 
         public T GetById<T>(int id) where T : Entity

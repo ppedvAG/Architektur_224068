@@ -23,7 +23,7 @@ namespace Carshop9000.Logic.Tests
             var c2 = new Car() { Color = "red", KW = 250 };
             var c3 = new Car() { Color = "red", KW = 150 };
             var repoMock = new Mock<IRepository>();
-            repoMock.Setup(x => x.GetAll<Car>()).Returns(() => new[] { c1, c2, c3 });
+            repoMock.Setup(x => x.Query<Car>()).Returns(() => new[] { c1, c2, c3 }.AsQueryable());
 
             var cs = new CarService(repoMock.Object);
 
@@ -37,7 +37,7 @@ namespace Carshop9000.Logic.Tests
             var c2 = new Car() { Color = "blue", KW = 250 };
             
             var repoMock = new Mock<IRepository>();
-            repoMock.Setup(x => x.GetAll<Car>()).Returns(() => new[] { c1, c2 });
+            repoMock.Setup(x => x.Query<Car>()).Returns(() => new[] { c1, c2 }.AsQueryable());
 
             var cs = new CarService(repoMock.Object);
 
