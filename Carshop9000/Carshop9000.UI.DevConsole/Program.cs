@@ -13,5 +13,5 @@ carService.CreateDemoCars();
 
 foreach (var car in repo.GetAll<Car>())
 {
-    Console.WriteLine($"{car.Model} {car.Color}");
+    Console.WriteLine($"{car.Manufacturer?.Name} {car.Model} {car.Color} {car.Manufacturer?.City}");
 }
