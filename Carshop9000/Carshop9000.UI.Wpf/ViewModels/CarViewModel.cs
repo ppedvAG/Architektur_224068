@@ -1,29 +1,29 @@
 ﻿using Carshop9000.Data.EfCore;
 using Carshop9000.Model.Contracts;
 using Carshop9000.Model.DomainModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Input;
 
 namespace Carshop9000.UI.Wpf.ViewModels
 {
-    public class CarViewModel : INotifyPropertyChanged
+    public class CarViewModel : ObservableObject
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        public List<Car> CarList { get; set; }
-
+        public ObservableCollection<Car> CarList { get; set; }
 
         public Car SelecteCar
         {
-            get => selecteCar; 
+            get => selecteCar;
             set
             {
                 selecteCar = value;
-                PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(nameof(SelecteCar)));
-                PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(nameof(Hp)));
+                OnPropertyChanged(nameof(SelecteCar));
+                OnPropertyChanged(nameof(Hp));
             }
         }
 
@@ -38,19 +38,33 @@ namespace Carshop9000.UI.Wpf.ViewModels
             }
         }
 
-        string conString = "Server=(localdb)\\mssqllocaldb;Database=Carshop9000_Test;Trusted_Connection=true";
 
-        IRepository _repo;
         private Car selecteCar;
+        private readonly IRepository _repo;
+
         public SaveCommand SaveCommand { get; set; }
 
-        public CarViewModel()
-        {
-            _repo = new EfRepository(conString);
+        public ICommand SaveCoolCommand { get; set; }
 
-            CarList = new List<Car>(_repo.Query<Car>().ToList());
+        public ICommand NewCommand { get; set; }
+
+        public CarViewModel(IRepository repo)
+        {
+            this._repo = repo;
+
+            CarList = new ObservableCollection<Car>(_repo.Query<Car>().ToList());
 
             SaveCommand = new SaveCommand(_repo);
+
+            SaveCoolCommand = new RelayCommand(() => _repo.SaveAll());
+
+            NewCommand = new RelayCommand(() =>
+            {
+                var newCar = new Car() { Model = "NEU" };
+                CarList.Add(newCar);
+                _repo.Add(newCar);
+                SelecteCar = newCar;
+            });
         }
     }
 

@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using Carshop9000.Model.Contracts;
+using Carshop9000.UI.Wpf.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Carshop9000.UI.Wpf.Views
 {
@@ -22,6 +12,7 @@ namespace Carshop9000.UI.Wpf.Views
     {
         public CarView()
         {
+            this.DataContext = App.Current.Services.GetService<CarViewModel>();
             InitializeComponent();
         }
     }

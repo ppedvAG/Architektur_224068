@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Carshop9000.Data.EfCore\Carshop9000.Data.EfCore.csproj" />
     <ProjectReference Include="..\Carshop9000.Logic\Carshop9000.Logic.csproj" />
     <ProjectReference Include="..\Carshop9000.Model\Carshop9000.Model.csproj" />
