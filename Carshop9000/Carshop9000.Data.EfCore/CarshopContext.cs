@@ -1,4 +1,4 @@
-﻿using Carshop9000.Model;
+﻿using Carshop9000.Model.DomainModel;
 using Microsoft.EntityFrameworkCore;
 
 namespace Carshop9000.Data.EfCore

@@ -1,6 +1,6 @@
 using AutoFixture;
 using AutoFixture.Kernel;
-using Carshop9000.Model;
+using Carshop9000.Model.DomainModel;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;

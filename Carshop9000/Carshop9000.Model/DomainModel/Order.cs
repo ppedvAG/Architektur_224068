@@ -1,4 +1,4 @@
-﻿namespace Carshop9000.Model
+﻿namespace Carshop9000.Model.DomainModel
 {
     public class Order : Entity
     {
