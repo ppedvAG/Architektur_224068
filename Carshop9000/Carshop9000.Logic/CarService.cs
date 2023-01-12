@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Carshop9000.Model.Contracts;
 using Carshop9000.Model.DomainModel;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Carshop9000.Logic
 {
@@ -12,6 +13,13 @@ namespace Carshop9000.Logic
         }
 
         public IRepository Repository { get; }
+
+        public Car? GetFastestRedCar()
+        {
+            return Repository.GetAll<Car>()
+                             .Where(x => x.Color == "red")
+                             .OrderByDescending(x => x.KW).FirstOrDefault();
+        }
 
         public void CreateDemoCars()
         {

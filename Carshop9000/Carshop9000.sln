@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.Logic", "Carsho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.UI.DevConsole", "Carshop9000.UI.DevConsole\Carshop9000.UI.DevConsole.csproj", "{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carshop9000.Logic.Tests", "Carshop9000.Logic.Tests\Carshop9000.Logic.Tests.csproj", "{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBD2EE17-446E-48FD-A5CE-E7C9A9684656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30BF7443-7DE3-48A0-BCEF-B2064CA6739E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

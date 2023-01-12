@@ -31,7 +31,6 @@ var container = new DryIoc.Container();
 container.RegisterInstance<IRepository>(new EfRepository(conString));
 container.Register<CarService, CarService>();
 
-
 var repo = container.Resolve<IRepository>();
 //var carService = new CarService(repo);
 
@@ -42,3 +41,7 @@ foreach (var car in repo.GetAll<Car>())
 {
     Console.WriteLine($"{car.Manufacturer?.Name} {car.Model} {car.Color} {car.Manufacturer?.City}");
 }
+
+Console.WriteLine();
+var bestCar = carService.GetFastestRedCar();
+Console.WriteLine($"Schnellstest rotes Auto: {bestCar.Manufacturer?.Name} {bestCar.Model}");
