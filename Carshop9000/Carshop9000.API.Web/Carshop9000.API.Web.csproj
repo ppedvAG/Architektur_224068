@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Carshop9000.Data.EfCore\Carshop9000.Data.EfCore.csproj" />
+    <ProjectReference Include="..\Carshop9000.Logic\Carshop9000.Logic.csproj" />
+    <ProjectReference Include="..\Carshop9000.Model\Carshop9000.Model.csproj" />
+  </ItemGroup>
+
+</Project>
