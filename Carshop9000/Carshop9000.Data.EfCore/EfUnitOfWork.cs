@@ -11,7 +11,7 @@ namespace Carshop9000.Data.EfCore
             _conContext = new CarshopContext(conString);
         }
 
-        public IOrderRepository OrderRepo => throw new NotImplementedException();
+        public IOrderRepository OrderRepo => new EfOrderRepository(_conContext);
 
         public IRepository<Car> CarRepo => new EfRepository<Car>(_conContext);
 

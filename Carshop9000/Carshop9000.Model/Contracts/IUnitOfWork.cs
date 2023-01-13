@@ -7,5 +7,8 @@ namespace Carshop9000.Model.Contracts
         void SaveAll();
 
         IRepository<T> GetRepo<T>() where T : Entity;
+
+        IOrderRepository OrderRepo { get; }
+        IRepository<Car> CarRepo { get; }
     }
 }
