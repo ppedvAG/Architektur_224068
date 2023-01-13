@@ -3,11 +3,6 @@ using Carshop9000.Model.Contracts;
 using Carshop9000.UI.Wpf.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Carshop9000.UI.Wpf

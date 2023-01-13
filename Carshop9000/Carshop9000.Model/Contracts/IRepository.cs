@@ -12,6 +12,8 @@ namespace Carshop9000.Model.Contracts
         void Update<T>(T entity) where T : Entity;
         void Delete<T>(T entity) where T : Entity;
 
+
+
         void SaveAll();
     }
 }
