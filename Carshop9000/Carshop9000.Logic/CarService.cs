@@ -1,10 +1,12 @@
 ﻿using Bogus;
-using Carshop9000.Model.Contracts;
+using Carshop9000.Model.Contracts.Repository;
+using Carshop9000.Model.Contracts.Services;
 using Carshop9000.Model.DomainModel;
 
 namespace Carshop9000.Logic
 {
-    public class CarService
+
+    public class CarService : ICarService
     {
         public CarService(IUnitOfWork unitOfWork)
         {

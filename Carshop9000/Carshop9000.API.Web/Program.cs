@@ -1,5 +1,5 @@
 using Carshop9000.Data.EfCore;
-using Carshop9000.Model.Contracts;
+using Carshop9000.Model.Contracts.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 

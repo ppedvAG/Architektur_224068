@@ -2,7 +2,8 @@
 using Autofac.Core;
 using Carshop9000.Data.EfCore;
 using Carshop9000.Logic;
-using Carshop9000.Model.Contracts;
+using Carshop9000.Model.Contracts.Repository;
+using Carshop9000.Model.Contracts.Services;
 using Carshop9000.Model.DomainModel;
 using DryIoc;
 using System.Reflection;
@@ -23,7 +24,9 @@ var conString = "Server=(localdb)\\mssqllocaldb;Database=Carshop9000_Test;Truste
 //DI per AutoFac
 var builder = new ContainerBuilder();
 builder.RegisterType<EfUnitOfWork>().WithParameter("conString", conString).As<IUnitOfWork>();
-builder.RegisterType<CarService>().AsSelf();
+builder.RegisterType<CarService>().AsImplementedInterfaces();
+builder.RegisterType<CustomerService>().AsImplementedInterfaces();
+builder.RegisterType<OrderService>().AsImplementedInterfaces();
 var container = builder.Build();
 
 //DI per DryIoc

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Carshop9000.API.Web.DTOs;
-using Carshop9000.Model.Contracts;
+using Carshop9000.Model.Contracts.Repository;
 using Carshop9000.Model.DomainModel;
 using Microsoft.AspNetCore.Mvc;
 

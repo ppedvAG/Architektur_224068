@@ -1,4 +1,4 @@
-﻿using Carshop9000.Model.Contracts;
+﻿using Carshop9000.Model.Contracts.Repository;
 using Carshop9000.Model.DomainModel;
 
 namespace Carshop9000.Data.EfCore
