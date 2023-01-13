@@ -37,10 +37,8 @@ namespace Carshop9000.UI.Wpf
             var services = new ServiceCollection();
 
             string conString = "Server=(localdb)\\mssqllocaldb;Database=Carshop9000_Test;Trusted_Connection=true";
-            services.AddSingleton<IRepository>(new EfRepository(conString));
-
+            services.AddTransient<IUnitOfWork>(x => new EfUnitOfWork(conString));
             services.AddTransient<CarViewModel>();
-
 
             return services.BuildServiceProvider();
         }

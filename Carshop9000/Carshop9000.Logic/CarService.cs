@@ -6,16 +6,17 @@ namespace Carshop9000.Logic
 {
     public class CarService
     {
-        public CarService(IRepository repository)
+        public CarService(IUnitOfWork unitOfWork)
         {
-            Repository = repository;
+            UnitOfWork = unitOfWork;
         }
 
-        public IRepository Repository { get; }
+        public IUnitOfWork UnitOfWork { get; }
 
         public Car? GetFastestRedCar()
         {
-            return Repository.Query<Car>()
+            return UnitOfWork.GetRepo<Car>()
+                             .Query()
                              .Where(x => x.Color == "red")
                              .OrderByDescending(x => x.KW).FirstOrDefault();
         }
@@ -36,10 +37,10 @@ namespace Carshop9000.Logic
 
             foreach (var car in faker.Generate(20))
             {
-                Repository.Add(car);
+                UnitOfWork.GetRepo<Car>().Add(car);
             }
 
-            Repository.SaveAll();
+            UnitOfWork.SaveAll();
         }
     }
 }

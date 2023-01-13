@@ -12,7 +12,7 @@ Console.WriteLine("*** Carshop 9000 v0.1 ***");
 var conString = "Server=(localdb)\\mssqllocaldb;Database=Carshop9000_Test;Trusted_Connection=true";
 
 //manual injection
-//var repo = new EfRepository(conString);
+//var uow = new EfUnitOfWork(conString);
 
 //DI per Reflection
 //var pfath = @"C:\Users\Fred\source\repos\ppedvAG\Architektur_224068\Carshop9000\Carshop9000.Data.EfCore\bin\Debug\net6.0\Carshop9000.Data.EfCore.dll";
@@ -21,23 +21,23 @@ var conString = "Server=(localdb)\\mssqllocaldb;Database=Carshop9000_Test;Truste
 //IRepository repo = Activator.CreateInstance(typeMitIRepo,conString) as IRepository;
 
 //DI per AutoFac
-//var builder = new ContainerBuilder();
-//builder.RegisterType<EfRepository>().WithParameter("conString", conString).As<IRepository>();
-//builder.RegisterType<CarService>().AsSelf();
-//var container = builder.Build();
+var builder = new ContainerBuilder();
+builder.RegisterType<EfUnitOfWork>().WithParameter("conString", conString).As<IUnitOfWork>();
+builder.RegisterType<CarService>().AsSelf();
+var container = builder.Build();
 
 //DI per DryIoc
-var container = new DryIoc.Container();
-container.RegisterInstance<IRepository>(new EfRepository(conString));
-container.Register<CarService, CarService>();
+//var container = new DryIoc.Container();
+//container.RegisterInstance<IRepository>(new EfRepository(conString));
+//container.Register<CarService, CarService>();
 
-var repo = container.Resolve<IRepository>();
-//var carService = new CarService(repo);
+var uow = container.Resolve<IUnitOfWork>();
+var carService = new CarService(uow);
 
-var carService = container.Resolve<CarService>();
-carService.CreateDemoCars();
+//var carService = container.Resolve<CarService>();
+//carService.CreateDemoCars();
 
-foreach (var car in repo.Query<Car>().ToList())
+foreach (var car in uow.GetRepo<Car>().Query().ToList())
 {
     Console.WriteLine($"{car.Manufacturer?.Name} {car.Model} {car.Color} {car.Manufacturer?.City}");
     //Console.WriteLine($" {car.Model} {car.Color} ");

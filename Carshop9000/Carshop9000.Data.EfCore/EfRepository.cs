@@ -3,44 +3,40 @@ using Carshop9000.Model.DomainModel;
 
 namespace Carshop9000.Data.EfCore
 {
-    public class EfRepository : IRepository
+    public class EfRepository<T> : IRepository<T> where T : Entity
     {
         protected CarshopContext _conContext;
 
-        public EfRepository(string conString)
+        public EfRepository(CarshopContext conContext)
         {
-            _conContext = new CarshopContext(conString);
+            _conContext = conContext;
         }
 
-        public void Add<T>(T entity) where T : Entity
+        public void Add(T entity)
         {
             _conContext.Set<T>().Add(entity);
-            //if (typeof(T) == typeof(Car))
-            //    _conContext.Cars.Add(entity as Car);
         }
 
-        public void Delete<T>(T entity) where T : Entity
+        public void Delete(T entity)
         {
             _conContext.Set<T>().Remove(entity);
         }
 
-        public IQueryable<T> Query<T>() where T : Entity
+        public IQueryable<T> Query()
         {
             return _conContext.Set<T>();
         }
 
-        public T GetById<T>(int id) where T : Entity
+        public T GetById(int id)
         {
             return _conContext.Set<T>().Find(id);
         }
 
-        public void SaveAll()
+        public void Update(T entity)
         {
-            _conContext.SaveChanges();
-        }
-
-        public void Update<T>(T entity) where T : Entity
-        {
+            //var loaded = GetById(entity.Id);
+            //if (loaded != null)
+            //    con.Entry(loaded).CurrentValues.SetValues(entity);
             _conContext.Set<T>().Update(entity);
         }
     }

@@ -39,7 +39,7 @@ namespace Carshop9000.UI.Wpf.ViewModels
         }
 
         private Car selecteCar;
-        private readonly IRepository _repo;
+        private readonly IUnitOfWork _uow;
 
         public SaveCommand SaveCommand { get; set; }
 
@@ -47,21 +47,21 @@ namespace Carshop9000.UI.Wpf.ViewModels
 
         public ICommand NewCommand { get; set; }
 
-        public CarViewModel(IRepository repo)
+        public CarViewModel(IUnitOfWork uow)
         {
-            this._repo = repo;
+            _uow = uow;
 
-            CarList = new ObservableCollection<Car>(_repo.Query<Car>().ToList());
+            CarList = new ObservableCollection<Car>(_uow.GetRepo<Car>().Query().ToList());
 
-            SaveCommand = new SaveCommand(_repo);
+            SaveCommand = new SaveCommand(_uow);
 
-            SaveCoolCommand = new RelayCommand(() => _repo.SaveAll());
+            SaveCoolCommand = new RelayCommand(() => _uow.SaveAll());
 
             NewCommand = new RelayCommand(() =>
             {
                 var newCar = new Car() { Model = "NEU" };
                 CarList.Add(newCar);
-                _repo.Add(newCar);
+                _uow.GetRepo<Car>().Add(newCar);
                 SelecteCar = newCar;
             });
         }
@@ -69,13 +69,13 @@ namespace Carshop9000.UI.Wpf.ViewModels
 
     public class SaveCommand : ICommand
     {
-        private readonly IRepository repo;
+        private readonly IUnitOfWork _uow;
 
         public event EventHandler? CanExecuteChanged;
 
-        public SaveCommand(IRepository repo)
+        public SaveCommand(IUnitOfWork uow)
         {
-            this.repo = repo;
+            this._uow = uow;
         }
 
         public bool CanExecute(object? parameter)
@@ -85,7 +85,7 @@ namespace Carshop9000.UI.Wpf.ViewModels
 
         public void Execute(object? parameter)
         {
-            repo.SaveAll();
+            _uow.SaveAll();
         }
     }
 }
